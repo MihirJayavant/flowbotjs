@@ -1,5 +1,4 @@
 {
-  "rulesDirectory": [],
   "rules": {
     "arrow-return-shorthand": true,
     "callable-types": true,
