@@ -1,14 +1,21 @@
 import { dialogFn } from './dialog'
 
-export interface IRoute {
+export interface IRoute<T> {
   path: string
-  dialog?: dialogFn
-  children?: IRoute[]
+  dialog?: dialogFn<T>
+  children?: IRoute<T>[]
 }
 
-export interface IRouteEntity {
-  [key: string]: {
-    dialog?: dialogFn
-    children?: IRouteEntity
-  }
+export interface IActivatedRoute {
+  path: string
+  parent: string[]
+}
+
+export interface IRouteEntity<T> {
+  [key: string]:
+    | {
+        dialog?: dialogFn<T>
+        children?: IRouteEntity<T>
+      }
+    | undefined
 }
