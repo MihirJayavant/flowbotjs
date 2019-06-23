@@ -1,3 +1,5 @@
-import { IStore, IStoreAction } from './store'
+import { IStoreAction } from './store'
+import { IActivity } from './activity'
+import { IConfig } from './config'
 
-export type dialogFn<T> = (store: Readonly<IStore<T>>) => IStoreAction<T>
+export type dialogFn<T> = (state: T, activity: IActivity, config: IConfig<T>) => IStoreAction<T>

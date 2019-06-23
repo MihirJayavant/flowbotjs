@@ -8,5 +8,5 @@ export interface IStore<T> {
 
 export interface IStoreAction<T> {
   data: Pick<T, keyof T>
-  navigateTo?: { path: string[]; relativeTo: string[] }
+  navigateTo?: { path: string[]; relativeTo?: string[] }
 }
