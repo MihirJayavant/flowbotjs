@@ -13,9 +13,9 @@ export interface IActivatedRoute {
 
 export interface IRouteEntity<T> {
   [key: string]:
-    | {
-        dialog?: dialogFn<T>
-        children?: IRouteEntity<T>
-      }
-    | undefined
+  {
+    dialog?: dialogFn<T>
+    children?: IRouteEntity<T>
+  }
+  | undefined
 }
