@@ -1,18 +1,26 @@
-import { IRoute } from 'core/interfaces'
+import { IRoute, IActivity, IConfig, IStoreAction } from 'core/interfaces'
 
-export const simpleRoute: IRoute<string>[] = [{ path: 'route1' }]
+interface IState {
+  data: string
+}
 
-export const multiNonNestedRoute: IRoute<string>[] = [
-  { path: 'route1' },
-  { path: 'route2' },
-  { path: 'route3' }
+function dialog1(state: IState, activity: IActivity, config: IConfig<IState>): IStoreAction<IState> {
+  return { data: { data: '' } }
+}
+
+export const simpleRoute: IRoute<IState>[] = [{ path: 'route1', dialog: dialog1 }]
+
+export const multiNonNestedRoute: IRoute<IState>[] = [
+  { path: 'route1', dialog: dialog1 },
+  { path: 'route2', dialog: dialog1 },
+  { path: 'route3', dialog: dialog1 }
 ]
 
-export const simpleNestedRoute: IRoute<string>[] = [
+export const simpleNestedRoute: IRoute<IState>[] = [
   {
     path: 'route1', children: [
-      { path: 'sub-route1' },
-      { path: 'sub-route2' }
+      { path: 'sub-route1', dialog: dialog1 },
+      { path: 'sub-route2', dialog: dialog1 }
     ]
   }
 ]

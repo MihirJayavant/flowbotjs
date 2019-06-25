@@ -16,13 +16,22 @@ export function routeConverter<T>(routes: IRoute<T>[]): IRouteEntity<T> {
 export function findRoute<T>(path: string[], route: IRouteEntity<T>): dialogFn<T> | undefined {
   let dialog: dialogFn<T> | undefined = undefined
   let tempRoute = route
-  for (const p in path) {
-    const r = tempRoute[p]
-    if (!!r) {
-      dialog = r.dialog
-      if (r.children) tempRoute = r.children
-      else break
-    } else break
+  let count = 0
+
+  while (count < path.length) {
+    const r = tempRoute[path[count]]
+
+    if (r) {
+      if (count === path.length - 1)
+        return r.dialog
+      else if (r.children)
+        tempRoute = r.children
+      else
+        return undefined
+
+    } else return undefined
+
+    count++
   }
 
   return dialog
