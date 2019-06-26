@@ -1,6 +1,6 @@
-import { IRoute, IActivatedRoute } from './route'
+import { IRouteEntity, IActivatedRoute } from './route'
 
 export interface IConfig<T> {
-  routes: IRoute<T>
+  routes: IRouteEntity<T>
   activatedRoute: IActivatedRoute
 }

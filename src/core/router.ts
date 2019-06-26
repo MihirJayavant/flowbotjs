@@ -14,7 +14,6 @@ export function routeConverter<T>(routes: IRoute<T>[]): IRouteEntity<T> {
 }
 
 export function findRoute<T>(path: string[], route: IRouteEntity<T>): dialogFn<T> | undefined {
-  let dialog: dialogFn<T> | undefined = undefined
   let tempRoute = route
   let count = 0
 
@@ -34,5 +33,5 @@ export function findRoute<T>(path: string[], route: IRouteEntity<T>): dialogFn<T
     count++
   }
 
-  return dialog
+  return undefined
 }

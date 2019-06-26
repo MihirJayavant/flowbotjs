@@ -1,8 +1,8 @@
-import { IRoute, IActivatedRoute } from './route'
+import { IRoute, IActivatedRoute, IRouteEntity } from './route'
 
 export interface IStore<T> {
   data: T
-  routes: IRoute<T>
+  routes: IRouteEntity<T>
   activatedRoute: IActivatedRoute
 }
 
