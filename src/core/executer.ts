@@ -1,7 +1,11 @@
 import { IStore, IActivatedRoute, IActivity, IStoreAction } from './interfaces'
-import { findRoute } from './router';
+import { findRoute } from './router'
 
-export function storeExecuter<T>(store: IStore<T>, stateSlice: Pick<T, keyof T>, activatedRoute: IActivatedRoute): IStore<T> {
+export function storeExecuter<T>(
+  store: IStore<T>,
+  stateSlice: Pick<T, keyof T>,
+  activatedRoute: IActivatedRoute
+): IStore<T> {
   return { ...store, data: { ...store.data, ...stateSlice }, activatedRoute }
 }
 
@@ -12,5 +16,5 @@ export function routeExecuter<T>(store: IStore<T>, activity: IActivity) {
   let res: IStoreAction<T> | undefined
 
   if (dialog)
-    res = dialog(store.data, activity, { activatedRoute: active, routes: store.routes })
+    res = dialog(store.data, activity, { activatedRoute: active, routes: store.rawRoutes })
 }

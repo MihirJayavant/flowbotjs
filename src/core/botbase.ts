@@ -1,15 +1,5 @@
+import { IBotTemplate, IStore } from './interfaces'
 
+export function creatrStore() {}
 
-export class BotBase {
-  private state: any
-
-  public constructor(state: any) {
-    this.state = state
-  }
-
-  public onStart() { }
-
-  public onStop() { }
-
-  public onMessageReceive() { }
-}
+export function createBot<T>(template: IBotTemplate<T>) {}
