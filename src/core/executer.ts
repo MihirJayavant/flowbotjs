@@ -1,4 +1,4 @@
-import { IStore, IActivatedRoute, IActivity, IStoreAction } from './interfaces'
+import { IStore, IActivatedRoute, IActivity, IDialogAction } from './interfaces'
 import { findRoute } from './router'
 
 export function storeExecuter<T>(
@@ -13,8 +13,17 @@ export function routeExecuter<T>(store: IStore<T>, activity: IActivity) {
   const active = store.activatedRoute
   const dialog = findRoute([...active.parent, active.path], store.routes)
 
-  let res: IStoreAction<T> | undefined
+  let res: IDialogAction<T> | undefined
 
   if (dialog)
     res = dialog(store.data, activity, { activatedRoute: active, routes: store.rawRoutes })
+
+  if (res) {
+    const { path, relativeTo } = res.navigateTo!
+    const ar: IActivatedRoute = {
+      path: path[path.length - 1],
+      parent: [...path.slice(0, path.length - 1), ...(relativeTo || [])]
+    }
+    storeExecuter(store, res.data, ar)
+  }
 }

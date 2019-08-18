@@ -6,8 +6,3 @@ export interface IStore<T> {
   routes: IRouteEntity<T>
   activatedRoute: IActivatedRoute
 }
-
-export interface IStoreAction<T> {
-  data: Pick<T, keyof T>
-  navigateTo?: { path: string[]; relativeTo?: string[] }
-}

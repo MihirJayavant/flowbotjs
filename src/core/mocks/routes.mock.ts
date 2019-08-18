@@ -1,10 +1,10 @@
-import { IRoute, IActivity, IConfig, IStoreAction } from 'core/interfaces'
+import { IRoute, IActivity, IConfig, IDialogAction } from 'core/interfaces'
 
 interface IState {
   data: string
 }
 
-function dialog1(state: IState, activity: IActivity, config: IConfig<IState>): IStoreAction<IState> {
+function dialog1(state: IState, activity: IActivity, config: IConfig<IState>): IDialogAction<IState> {
   return { data: { data: '' } }
 }
 
