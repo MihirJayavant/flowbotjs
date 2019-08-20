@@ -2,10 +2,11 @@
   "name": "flowbotjs.core",
   "version": "0.0.0",
   "description": "core library for flowbotjs",
-  "main": "index.js",
   "author": "Mihir Jayavant",
   "license": "MIT",
   "private": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest",
