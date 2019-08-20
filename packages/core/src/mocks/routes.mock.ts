@@ -1,4 +1,4 @@
-import { IRoute, IActivity, IConfig, IDialogAction } from 'core/interfaces'
+import { IRoute, IActivity, IConfig, IDialogAction } from 'interfaces'
 
 interface IState {
   data: string

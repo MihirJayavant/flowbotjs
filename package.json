@@ -1,13 +1,14 @@
 {
   "name": "flowbotjs",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Its a bot framework",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "test": "jest --watch"
-  },
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {},
   "keywords": [
     "bot"
   ],
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@types/jest": "^24.0.15",
     "jest": "^24.8.0",
+    "lerna": "^3.16.4",
     "ts-jest": "^24.0.2",
     "ts-lint": "^4.5.1",
     "tslint": "^5.18.0",
