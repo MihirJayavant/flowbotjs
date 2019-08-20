@@ -8,6 +8,10 @@
   "private": false,
   "scripts": {
     "build": "tsc",
-    "test": "jest --watch"
+    "test": "jest",
+    "clean": "rimraf dist"
+  },
+  "jest": {
+    "preset": "ts-jest"
   }
 }
