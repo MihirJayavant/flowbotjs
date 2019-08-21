@@ -5,4 +5,5 @@ export interface IStore<T> {
   rawRoutes: IRoute<T>
   routes: IRouteEntity<T>
   activatedRoute: IActivatedRoute
+  startRoute: IActivatedRoute
 }

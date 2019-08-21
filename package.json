@@ -10,7 +10,7 @@
     "lerna": "lerna",
     "build": "lerna run build",
     "test": "lerna run test",
-    "clean": "lerna clean && lerna run clean"
+    "clean": "lerna clean --yes && lerna run clean"
   },
   "keywords": [
     "bot"

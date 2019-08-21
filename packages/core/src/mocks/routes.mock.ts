@@ -1,11 +1,11 @@
-import { IRoute, IActivity, IConfig, IDialogAction } from 'interfaces'
+import { IRoute, IDialogAction } from 'interfaces'
 
 interface IState {
   data: string
 }
 
-function dialog1(state: IState, activity: IActivity, config: IConfig<IState>): IDialogAction<IState> {
-  return { data: { data: '' } }
+function dialog1(): IDialogAction<IState> {
+  return { state: { data: '' }, message: '' }
 }
 
 export const simpleRoute: IRoute<IState>[] = [{ path: 'route1', dialog: dialog1 }]

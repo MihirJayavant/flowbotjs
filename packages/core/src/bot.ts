@@ -1,5 +1,5 @@
 import { IBotTemplate, IStore } from './interfaces'
 
-export function creatrStore() {}
+export function createStore() { }
 
-export function createBot<T>(template: IBotTemplate<T>) {}
+export function createBot<T>(template: IBotTemplate<T>) { }
