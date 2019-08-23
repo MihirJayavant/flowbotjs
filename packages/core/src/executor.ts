@@ -13,7 +13,7 @@ export function storeExecutor<T>(
   }
 }
 
-export function routeExecutor<T>(store: IStore<T>) {
+export function routeExecutor<T>(store: IStore<T>): dialogFn<T> | undefined {
   const active = store.activatedRoute
   return findRoute([...active.parent, active.path], store.routes)
 }
