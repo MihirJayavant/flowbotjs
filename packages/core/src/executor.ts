@@ -8,12 +8,12 @@ export function storeExecutor<T>(
 ): IStore<T> {
   return {
     ...store,
-    data: { ...store.data, ...stateSlice },
+    state: { ...store.state, ...stateSlice },
     activatedRoute
   }
 }
 
-export function routeExecutor<T>(store: IStore<T>): dialogFn<T> | undefined {
+export function routeExecutor<T>(store: IStore<T>) {
   const active = store.activatedRoute
   return findRoute([...active.parent, active.path], store.routes)
 }
@@ -26,7 +26,7 @@ export function dialogExecutor<T>(
   const { activatedRoute } = store
   const routes = store.rawRoutes
 
-  const response = dialog(store.data, activity, { activatedRoute, routes })
+  const response = dialog(store.state, activity, { activatedRoute, routes })
   const newStore = storeExecutor(store, response.state, response.navigateTo || store.startRoute)
 
   return [newStore, response]

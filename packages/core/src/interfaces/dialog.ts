@@ -2,7 +2,7 @@ import { IActivity } from './activity'
 import { IActivatedRoute, IRoute } from './route'
 
 export interface IConfig<T> {
-  routes: IRoute<T>
+  routes: IRoute<T>[]
   activatedRoute: IActivatedRoute
 }
 
