@@ -1,5 +1,5 @@
 import { IBotTemplate, IStore, IRoute, IActivatedRoute, IBot, IActivity } from './interfaces'
-import { routeConverter } from 'router'
+import { routeConverter } from './router'
 
 export function createStore<T>(state: T, route: IRoute<T>[], startRoute: IActivatedRoute): IStore<T> {
   return {

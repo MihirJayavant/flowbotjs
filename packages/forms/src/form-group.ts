@@ -1,10 +1,10 @@
-import { IFormGroup, IField } from "./interfaces";
+import { IFormGroup, IField } from './interfaces'
 
 export class FormGroupBuilder {
   private formGroup: IFormGroup = {
     index: 0,
     children: [],
-    isValid: false,
+    isValid: false
   }
 
   addMessage(message: string) {
@@ -25,5 +25,4 @@ export class FormGroupBuilder {
   create(): IFormGroup {
     return { ...this.formGroup }
   }
-
 }

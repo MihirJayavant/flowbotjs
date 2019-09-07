@@ -10,7 +10,9 @@
     "lerna": "lerna",
     "build": "lerna run build",
     "test": "lerna run test",
-    "clean": "lerna clean --yes && lerna run clean"
+    "clean": "lerna clean --yes && lerna run clean",
+    "predoc": "rimraf -rf docs",
+    "doc": "typedoc"
   },
   "keywords": [
     "bot"
@@ -32,6 +34,8 @@
     "lerna": "^3.16.4",
     "rimraf": "3.0.0",
     "ts-jest": "^24.0.2",
+    "typedoc": "^0.15.0",
+    "typedoc-plugin-lerna-packages": "^0.1.6",
     "typescript": "^3.5.3"
   }
 }
