@@ -17,7 +17,7 @@
     "immutable": "^4.0.0-rc.12"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.15",
+    "@types/jest": "^24.0.18",
     "jest": "^24.8.0",
     "ts-jest": "^24.0.2",
     "ts-lint": "^4.5.1",
