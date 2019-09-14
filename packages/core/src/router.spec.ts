@@ -1,4 +1,4 @@
-import { simpleRoute, multiNonNestedRoute, simpleNestedRoute } from '../core/mocks'
+import { simpleRoute, multiNonNestedRoute, simpleNestedRoute } from './mocks'
 import { routeConverter, findRoute } from './router'
 
 describe('[Unit Test] Router Testing', () => {

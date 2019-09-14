@@ -1,0 +1,15 @@
+{
+  "name": "flowbotjs.form",
+  "version": "0.0.0",
+  "description": "form flow implementation for bot",
+  "author": "Mihir jayavant",
+  "license": "MIT",
+  "private": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "build": "tsc",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist"
+  }
+}

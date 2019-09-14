@@ -1,0 +1,10 @@
+{
+  "mode": "modules",
+  "out": "docs",
+  "theme": "default",
+  "ignoreCompilerErrors": "false",
+  "exclude": ["**/node_modules/**", "**/*.spec.ts"],
+  "name": "Flowbotjs",
+  "skipInternal": true,
+  "readme": "README.md"
+}

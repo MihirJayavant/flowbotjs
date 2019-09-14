@@ -2,10 +2,11 @@ import { IStore } from './store'
 import { IActivity } from './activity'
 
 export interface IBotTemplate<T> {
-  name: string
-  id: string
+  readonly name: string
+  readonly id: string
   store: IStore<T>
-  onMessageReceive: (activity: IActivity) => void
+  messageFromBot: (activity: IActivity) => void
+  onStoreChange?: (store: IStore<T>) => void
 }
 
 export interface IBot {

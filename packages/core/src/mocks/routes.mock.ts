@@ -1,11 +1,11 @@
-import { IRoute, IActivity, IConfig, IDialogAction } from 'core/interfaces'
+import { IRoute, IDialogAction } from '../interfaces'
 
 interface IState {
   data: string
 }
 
-function dialog1(state: IState, activity: IActivity, config: IConfig<IState>): IDialogAction<IState> {
-  return { data: { data: '' } }
+function dialog1(): IDialogAction<IState> {
+  return { state: { data: '' }, message: '' }
 }
 
 export const simpleRoute: IRoute<IState>[] = [{ path: 'route1', dialog: dialog1 }]
@@ -18,9 +18,7 @@ export const multiNonNestedRoute: IRoute<IState>[] = [
 
 export const simpleNestedRoute: IRoute<IState>[] = [
   {
-    path: 'route1', children: [
-      { path: 'sub-route1', dialog: dialog1 },
-      { path: 'sub-route2', dialog: dialog1 }
-    ]
+    path: 'route1',
+    children: [{ path: 'sub-route1', dialog: dialog1 }, { path: 'sub-route2', dialog: dialog1 }]
   }
 ]
