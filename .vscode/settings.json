@@ -1,0 +1,8 @@
+{
+  "editor.formatOnSave": true,
+  "workbench.colorCustomizations": {},
+  "eslint.validate": ["typescript"],
+  "eslint.alwaysShowStatus": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.enable": true
+}

@@ -1,0 +1,41 @@
+{
+  "name": "flowbotjs",
+  "version": "0.0.0",
+  "description": "Its a bot framework",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lerna": "lerna",
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "clean": "rimraf -rf docs && lerna clean --yes && lerna run clean",
+    "predoc": "rimraf -rf docs",
+    "doc": "typedoc"
+  },
+  "keywords": [
+    "bot"
+  ],
+  "author": "Mihir Jayavant",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 6.9.0 < 13.0.0",
+    "npm": ">= 3.x <= 6.x",
+    "yarn": ">=1.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@typescript-eslint/eslint-plugin": "^2.2.0",
+    "@typescript-eslint/parser": "^2.2.0",
+    "eslint": "^6.4.0",
+    "jest": "^24.9.0",
+    "lerna": "^3.16.4",
+    "rimraf": "3.0.0",
+    "ts-jest": "^24.1.0",
+    "typedoc": "^0.15.0",
+    "typedoc-plugin-lerna-packages": "^0.2.1",
+    "typescript": "^3.5.3"
+  }
+}
