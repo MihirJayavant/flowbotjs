@@ -23,7 +23,6 @@ export function dialogExecutor<T>(store: IStore<T>, activity: IActivity, dialog:
   const routes = store.rawRoutes
 
   const response = dialog(store.state, activity, { activatedRoute, routes })
-  // const newStore = storeExecutor(store, response.state, response.navigateTo || store.startRoute)
 
   return response
 }

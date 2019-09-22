@@ -105,5 +105,4 @@ describe('[Unit Test] Router Testing', () => {
     expect(dialog1).toBeUndefined()
     expect(dialog2).toBeUndefined()
   })
-
 })

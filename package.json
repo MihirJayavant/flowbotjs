@@ -10,6 +10,7 @@
     "lerna": "lerna",
     "build": "lerna run build",
     "test": "lerna run test",
+    "test:watch": "lerna run test:watch --stream --scope",
     "clean": "rimraf -rf docs && lerna clean --yes && lerna run clean",
     "predoc": "rimraf -rf docs",
     "doc": "typedoc"
