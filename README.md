@@ -1,6 +1,6 @@
 # FlowBotJs
 
-![](https://github.com/MihirJayavant/flowbotjs/workflows/Node%20CI/badge.svg)
+![](https://github.com/MihirJayavant/flowbotjs/workflows/build/badge.svg)
 
 ## A javascript bot framework
 

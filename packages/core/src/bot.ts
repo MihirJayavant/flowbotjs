@@ -1,4 +1,4 @@
-import { IBotTemplate, IStore, IRoute, IActivatedRoute, IBot, IActivity, IActivityTemplate } from './interfaces'
+import { IBotTemplate, IStore, IRoute, IActivatedRoute, IBot, IActivity } from './interfaces'
 import { routeConverter } from './router'
 import { dialogExecutor, routeExecutor, storeExecutor } from './executor'
 import { DialogNotFound } from './exceptions'
