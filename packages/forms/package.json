@@ -9,6 +9,7 @@
   "types": "dist/index.d.ts",
   "build": "tsc",
   "scripts": {
+    "prebuild": "rimraf dist",
     "build": "tsc",
     "clean": "rimraf dist"
   }

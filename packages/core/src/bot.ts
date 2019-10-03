@@ -17,19 +17,21 @@ class Bot<T> implements IBot {
   readonly name: string
   readonly id: string
 
+  private readonly messageFromBot: (activity: IActivity) => void
   private store: IStore<T>
 
   constructor(botTemplate: IBotTemplate<T>) {
     this.name = botTemplate.name
     this.id = botTemplate.id
     this.store = botTemplate.store
+    this.messageFromBot = botTemplate.messageFromBot
   }
 
   setStore(store: IStore<T>) {
     this.store = store
   }
 
-  sendMessage(activity: IActivity): IActivityTemplate {
+  sendMessage(activity: IActivity): void {
     const dialog = routeExecutor(this.store)
 
     if (dialog) {
@@ -37,7 +39,7 @@ class Bot<T> implements IBot {
       const store = storeExecutor(this.store, response.state, response.navigateTo || this.store.startRoute)
       this.setStore(store)
 
-      return { message: response.message }
+      this.messageFromBot({ message: response.message })
     }
     // exception
     else {
