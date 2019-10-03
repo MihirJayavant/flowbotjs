@@ -6,6 +6,11 @@ on:
       - master
       - dev
 
+  pull_request:
+    branches:
+      - master
+      - dev
+
 jobs:
   build:
     name: Build on node ${{ matrix.node_version }} and ${{ matrix.os }}
