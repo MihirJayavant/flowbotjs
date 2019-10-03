@@ -12,4 +12,4 @@ export interface IDialogAction<T> {
   navigateTo?: IActivatedRoute
 }
 
-export type dialogFn<T> = (state: T, activity: IActivity, config: IConfig<T>) => IDialogAction<T>
+export type dialogFn<T> = (activity: IActivity, state: T, config: IConfig<T>) => IDialogAction<T>

@@ -3,7 +3,7 @@
   "out": "docs",
   "theme": "default",
   "ignoreCompilerErrors": "false",
-  "exclude": ["**/node_modules/**", "**/*.spec.ts"],
+  "exclude": ["**/node_modules/**", "**/*.spec.ts", "**/mocks/**"],
   "name": "Flowbotjs",
   "skipInternal": true,
   "readme": "README.md"
