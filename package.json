@@ -1,8 +1,16 @@
 {
-  "name": "flowbotjs",
+  "name": "@flowbot/flowbotjs",
   "version": "0.0.0",
   "description": "Its a bot framework",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MihirJayavant/flowbotjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MihirJayavant/flowbotjs/issues"
+  },
+  "homepage": "https://github.com/MihirJayavant/flowbotjs#readme",
   "workspaces": [
     "packages/*"
   ],
@@ -24,6 +32,9 @@
     "node": ">= 6.9.0 < 13.0.0",
     "npm": ">= 3.x <= 6.x",
     "yarn": ">=1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {},
   "devDependencies": {
