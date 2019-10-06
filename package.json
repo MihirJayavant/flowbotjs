@@ -1,5 +1,5 @@
 {
-  "name": "@flowbot/flowbotjs",
+  "name": "@flowbotjs/flowbotjs",
   "version": "0.0.0",
   "description": "Its a bot framework",
   "private": true,

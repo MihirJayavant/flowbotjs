@@ -1,5 +1,5 @@
 {
-  "name": "@flowbot/core",
+  "name": "@flowbotjs/core",
   "version": "0.1.1",
   "description": "core library for flowbotjs",
   "author": "Mihir Jayavant",
