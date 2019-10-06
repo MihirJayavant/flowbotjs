@@ -19,5 +19,6 @@
   },
   "jest": {
     "preset": "ts-jest"
-  }
+  },
+  "gitHead": "785e9b4e325c378ba674c56078a4add8fdb949f5"
 }
