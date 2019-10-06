@@ -1,6 +1,6 @@
 {
   "name": "@flowbotjs/form",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "form flow implementation for bot",
   "author": "Mihir jayavant",
   "license": "MIT",
@@ -14,5 +14,8 @@
     "prebuild": "rimraf dist",
     "build": "tsc",
     "clean": "rimraf dist"
-  }
+  },
+  "files": [
+    "dist/**/*"
+  ]
 }

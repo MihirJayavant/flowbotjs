@@ -1,6 +1,6 @@
 {
   "name": "@flowbotjs/core",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "core library for flowbotjs",
   "author": "Mihir Jayavant",
   "license": "MIT",
@@ -20,5 +20,8 @@
   "jest": {
     "preset": "ts-jest"
   },
-  "gitHead": "785e9b4e325c378ba674c56078a4add8fdb949f5"
+  "gitHead": "785e9b4e325c378ba674c56078a4add8fdb949f5",
+  "files": [
+    "dist/**/*"
+  ]
 }
