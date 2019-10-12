@@ -18,6 +18,9 @@ class Bot<T> implements IBot {
   readonly id: string
 
   private readonly messageFromBot: (activity: IActivity) => void
+  private readonly onStoreChange?: (store: IStore<T>) => void
+  private readonly onError?: (error: Error) => void
+
   private store: IStore<T>
 
   constructor(botTemplate: IBotTemplate<T>) {
@@ -25,6 +28,8 @@ class Bot<T> implements IBot {
     this.id = botTemplate.id
     this.store = botTemplate.store
     this.messageFromBot = botTemplate.messageFromBot
+    this.onStoreChange = botTemplate.onStoreChange
+    this.onError = botTemplate.onError
   }
 
   setStore(store: IStore<T>) {
@@ -33,21 +38,25 @@ class Bot<T> implements IBot {
 
   sendMessage(activity: IActivity): void {
     const dialog = routeExecutor(this.store)
+    try {
+      if (dialog) {
+        const response = dialogExecutor(this.store, activity, dialog)
 
-    if (dialog) {
-      const response = dialogExecutor(this.store, activity, dialog)
-
-      if (response.state) {
-        const store = storeExecutor(this.store, response.state, response.navigateTo || this.store.startRoute)
+        const store = storeExecutor(this.store, response.state || {}, response.navigateTo || this.store.startRoute)
         this.setStore(store)
+
+        if (this.onStoreChange) this.onStoreChange(store)
+
+        this.messageFromBot({ message: response.message })
       }
-      this.messageFromBot({ message: response.message })
-    }
-    // exception
-    else {
-      const { parent, path } = this.store.activatedRoute
-      const route = (parent || []).join('/') + '/' + path
-      throw new DialogNotFound(route)
+      // exception
+      else {
+        const { parent, path } = this.store.activatedRoute
+        const route = (parent || []).join('/') + '/' + path
+        throw new DialogNotFound(route)
+      }
+    } catch (error) {
+      if (this.onError) this.onError(error)
     }
   }
 }
