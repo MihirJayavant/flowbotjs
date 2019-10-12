@@ -7,6 +7,7 @@ export interface IBotTemplate<T> {
   store: IStore<T>
   messageFromBot: (activity: IActivity) => void
   onStoreChange?: (store: IStore<T>) => void
+  onError?: (error: Error) => void
 }
 
 export interface IBot {
