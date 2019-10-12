@@ -8,14 +8,14 @@ export interface IRoute<T> {
 
 export interface IActivatedRoute {
   path: string
-  parent: string[]
+  parent?: string[]
 }
 
 export interface IRouteEntity<T> {
   [key: string]:
-  {
-    dialog?: dialogFn<T>
-    children?: IRouteEntity<T>
-  }
-  | undefined
+    | {
+        dialog?: dialogFn<T>
+        children?: IRouteEntity<T>
+      }
+    | undefined
 }

@@ -1,11 +1,7 @@
 import { IStore, IActivatedRoute, IActivity, dialogFn } from './interfaces'
 import { findRoute } from './router'
 
-export function storeExecutor<T>(
-  store: IStore<T>,
-  stateSlice: Pick<T, keyof T>,
-  activatedRoute: IActivatedRoute
-): IStore<T> {
+export function storeExecutor<T>(store: IStore<T>, stateSlice: Partial<T>, activatedRoute: IActivatedRoute): IStore<T> {
   return {
     ...store,
     state: { ...store.state, ...stateSlice },
@@ -15,7 +11,7 @@ export function storeExecutor<T>(
 
 export function routeExecutor<T>(store: IStore<T>) {
   const active = store.activatedRoute
-  return findRoute([...active.parent, active.path], store.routes)
+  return findRoute([...(active.parent || []), active.path], store.routes)
 }
 
 export function dialogExecutor<T>(store: IStore<T>, activity: IActivity, dialog: dialogFn<T>) {

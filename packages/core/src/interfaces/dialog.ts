@@ -8,7 +8,7 @@ export interface IConfig<T> {
 
 export interface IDialogAction<T> {
   message: string
-  state: Pick<T, keyof T>
+  state?: Partial<T>
   navigateTo?: IActivatedRoute
 }
 

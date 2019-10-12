@@ -1,6 +1,6 @@
 {
   "name": "@flowbotjs/core",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "core library for flowbotjs",
   "author": "Mihir Jayavant",
   "license": "MIT",
@@ -9,6 +9,23 @@
   "types": "dist/index.d.ts",
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MihirJayavant/flowbotjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MihirJayavant/flowbotjs/issues"
+  },
+  "homepage": "https://github.com/MihirJayavant/flowbotjs#readme",
+  "keywords": [
+    "chatbot",
+    "flowbot",
+    "flowbotjs"
+  ],
+  "engines": {
+    "node": ">= 6.9.0 < 13.0.0",
+    "npm": ">= 3.x <= 6.x"
   },
   "scripts": {
     "prebuild": "rimraf dist",
