@@ -36,15 +36,17 @@ class Bot<T> implements IBot {
 
     if (dialog) {
       const response = dialogExecutor(this.store, activity, dialog)
-      const store = storeExecutor(this.store, response.state, response.navigateTo || this.store.startRoute)
-      this.setStore(store)
 
+      if (response.state) {
+        const store = storeExecutor(this.store, response.state, response.navigateTo || this.store.startRoute)
+        this.setStore(store)
+      }
       this.messageFromBot({ message: response.message })
     }
     // exception
     else {
       const { parent, path } = this.store.activatedRoute
-      const route = parent.join('/') + '/' + path
+      const route = (parent || []).join('/') + '/' + path
       throw new DialogNotFound(route)
     }
   }

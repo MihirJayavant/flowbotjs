@@ -1,6 +1,6 @@
 {
   "name": "@flowbotjs/flowbotjs",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Its a bot framework",
   "private": true,
   "repository": {
@@ -11,6 +11,18 @@
     "url": "https://github.com/MihirJayavant/flowbotjs/issues"
   },
   "homepage": "https://github.com/MihirJayavant/flowbotjs#readme",
+  "keywords": [
+    "chatbot",
+    "flowbot",
+    "flowbotjs"
+  ],
+  "author": "Mihir Jayavant",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 6.9.0 < 13.0.0",
+    "npm": ">= 3.x <= 6.x",
+    "yarn": ">=1.0.0"
+  },
   "workspaces": [
     "packages/*"
   ],
@@ -22,16 +34,6 @@
     "clean": "rimraf -rf docs && lerna clean --yes && lerna run clean",
     "predoc": "rimraf -rf docs",
     "doc": "typedoc"
-  },
-  "keywords": [
-    "bot"
-  ],
-  "author": "Mihir Jayavant",
-  "license": "MIT",
-  "engines": {
-    "node": ">= 6.9.0 < 13.0.0",
-    "npm": ">= 3.x <= 6.x",
-    "yarn": ">=1.0.0"
   },
   "publishConfig": {
     "access": "public"
