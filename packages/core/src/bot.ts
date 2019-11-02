@@ -36,11 +36,11 @@ class Bot<T> implements IBot {
     this.store = store
   }
 
-  sendMessage(activity: IActivity): void {
+  async sendMessage(activity: IActivity): Promise<void> {
     const dialog = routeExecutor(this.store)
     try {
       if (dialog) {
-        const response = dialogExecutor(this.store, activity, dialog)
+        const response = await dialogExecutor(this.store, activity, dialog)
 
         const store = storeExecutor(this.store, response.state || {}, response.navigateTo || this.store.startRoute)
         this.setStore(store)

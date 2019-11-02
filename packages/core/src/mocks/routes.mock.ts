@@ -4,7 +4,7 @@ interface IState {
   data: string
 }
 
-function dialog1(): IDialogAction<IState> {
+export function dialog1(): IDialogAction<IState> {
   return { state: { data: '' }, message: '' }
 }
 
