@@ -30,7 +30,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",
-    "test": "jest",
+    "test": "jest --ci",
     "test:watch": "jest --watch",
     "clean": "rimraf dist"
   },
