@@ -5,6 +5,5 @@
   "ignoreCompilerErrors": "false",
   "exclude": ["**/node_modules/**", "**/*.spec.ts", "**/mocks/**"],
   "name": "Flowbotjs",
-  "skipInternal": true,
   "readme": "README.md"
 }
