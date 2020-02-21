@@ -19,8 +19,8 @@
   "author": "Mihir Jayavant",
   "license": "MIT",
   "engines": {
-    "node": ">= 6.9.0 < 13.0.0",
-    "npm": ">= 3.x <= 6.x",
+    "node": ">= 10.0.0 < 13.0.0",
+    "npm": ">= 4.x <= 6.x",
     "yarn": ">=1.0.0"
   },
   "workspaces": [
