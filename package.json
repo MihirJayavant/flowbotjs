@@ -34,7 +34,7 @@
     "clean": "rimraf -rf docs && lerna clean --yes && lerna run clean",
     "predoc": "rimraf -rf docs",
     "doc": "typedoc",
-    "lint": "eslint packages/**",
+    "lint": "eslint \"packages/**\"",
     "format:check": "pretty-quick --check"
   },
   "publishConfig": {
