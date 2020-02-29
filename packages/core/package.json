@@ -1,6 +1,6 @@
 {
   "name": "@flowbotjs/core",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "core library for flowbotjs",
   "author": "Mihir Jayavant",
   "license": "MIT",

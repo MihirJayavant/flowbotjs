@@ -1,6 +1,6 @@
 {
   "name": "@flowbotjs/form",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "form flow implementation for bot",
   "author": "Mihir jayavant",
   "license": "MIT",

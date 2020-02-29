@@ -1,6 +1,6 @@
 {
   "name": "@flowbotjs/flowbotjs",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Its a bot framework",
   "private": true,
   "repository": {
@@ -19,8 +19,8 @@
   "author": "Mihir Jayavant",
   "license": "MIT",
   "engines": {
-    "node": ">= 6.9.0 < 13.0.0",
-    "npm": ">= 3.x <= 6.x",
+    "node": ">= 10.0.0 < 13.0.0",
+    "npm": ">= 4.x <= 6.x",
     "yarn": ">=1.0.0"
   },
   "workspaces": [
@@ -33,23 +33,33 @@
     "test:watch": "lerna run test:watch --stream --scope",
     "clean": "rimraf -rf docs && lerna clean --yes && lerna run clean",
     "predoc": "rimraf -rf docs",
-    "doc": "typedoc"
+    "doc": "typedoc",
+    "lint": "eslint \"packages/**\"",
+    "format:check": "pretty-quick --check"
   },
   "publishConfig": {
     "access": "public"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "^24.0.18",
-    "@typescript-eslint/eslint-plugin": "^2.3.2",
-    "@typescript-eslint/parser": "^2.3.2",
-    "eslint": "^6.5.1",
-    "jest": "^24.9.0",
+    "@types/jest": "^25.1.3",
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/parser": "^2.20.0",
+    "eslint": "^6.8.0",
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
     "lerna": "^3.20.2",
-    "rimraf": "3.0.0",
-    "ts-jest": "^24.1.0",
-    "typedoc": "^0.15.0",
-    "typedoc-plugin-lerna-packages": "^0.2.2",
-    "typescript": "^3.6.3"
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "rimraf": "3.0.2",
+    "ts-jest": "^25.2.1",
+    "typedoc": "^0.16.10",
+    "typedoc-plugin-lerna-packages": "^0.3.0",
+    "typescript": "^3.8.2"
   }
 }
