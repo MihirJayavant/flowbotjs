@@ -1,0 +1,36 @@
+name: publish
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    name: Publish using node ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+        os: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1.3.0
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+      - name: yarn install, test and build
+        run: |
+          yarn
+          yarn run test
+          yarn run build
+        env:
+          CI: true
+      - name: lerna publish
+        run: |
+          lerna publish from-git --yes
+        env:
+          CI: true
+          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}

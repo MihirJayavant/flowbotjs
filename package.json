@@ -1,6 +1,6 @@
 {
   "name": "@flowbotjs/flowbotjs",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Its a bot framework",
   "private": true,
   "repository": {
