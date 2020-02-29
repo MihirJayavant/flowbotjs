@@ -35,7 +35,8 @@
     "predoc": "rimraf -rf docs",
     "doc": "typedoc",
     "lint": "eslint \"packages/**\"",
-    "format:check": "pretty-quick --check"
+    "format:check": "pretty-quick --check",
+    "publish": "lerna publish from-git --yes"
   },
   "publishConfig": {
     "access": "public"
