@@ -30,7 +30,7 @@ jobs:
           CI: true
       - name: lerna publish
         run: |
-          lerna publish from-git --yes
+          yarn run publish
         env:
           CI: true
           NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
