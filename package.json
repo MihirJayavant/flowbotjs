@@ -33,10 +33,17 @@
     "test:watch": "lerna run test:watch --stream --scope",
     "clean": "rimraf -rf docs && lerna clean --yes && lerna run clean",
     "predoc": "rimraf -rf docs",
-    "doc": "typedoc"
+    "doc": "typedoc",
+    "lint": "eslint packages/**",
+    "format:check": "pretty-quick --check"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "dependencies": {},
   "devDependencies": {
@@ -44,8 +51,11 @@
     "@typescript-eslint/eslint-plugin": "^2.20.0",
     "@typescript-eslint/parser": "^2.20.0",
     "eslint": "^6.8.0",
+    "husky": "^4.2.3",
     "jest": "^25.1.0",
     "lerna": "^3.20.2",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
     "rimraf": "3.0.2",
     "ts-jest": "^25.2.1",
     "typedoc": "^0.16.10",

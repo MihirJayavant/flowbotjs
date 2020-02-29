@@ -1,1 +1,4 @@
+packages/**/*.md
+packages/**/*.json
 packages/**/*.spec.ts
+node_modules

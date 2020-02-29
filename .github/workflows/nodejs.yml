@@ -30,6 +30,8 @@ jobs:
       - name: npm install, build, and test
         run: |
           yarn
+          yarn run format:check
+          yarn run lint
           yarn run test
           yarn run build
         env:

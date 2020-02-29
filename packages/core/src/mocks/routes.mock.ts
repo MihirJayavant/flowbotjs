@@ -19,6 +19,9 @@ export const multiNonNestedRoute: IRoute<IState>[] = [
 export const simpleNestedRoute: IRoute<IState>[] = [
   {
     path: 'route1',
-    children: [{ path: 'sub-route1', dialog: dialog1 }, { path: 'sub-route2', dialog: dialog1 }]
+    children: [
+      { path: 'sub-route1', dialog: dialog1 },
+      { path: 'sub-route2', dialog: dialog1 }
+    ]
   }
 ]
