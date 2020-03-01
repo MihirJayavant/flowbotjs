@@ -6,20 +6,15 @@ on:
 
 jobs:
   build:
-    name: Publish using node ${{ matrix.node_version }} and ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        node-version: [12.x]
-        os: [ubuntu-latest]
+    name: Publish using node 12 and ubuntu
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 12
         uses: actions/setup-node@v1.3.0
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '12.x'
           registry-url: 'https://registry.npmjs.org'
       - name: yarn install, test and build
         run: |
