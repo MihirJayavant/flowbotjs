@@ -1,12 +1,11 @@
-import { IRoute, IRouteEntity } from './interfaces'
-import { dialogFn } from './interfaces/dialog'
+import { IRoute, IRouteEntity, dialogFn } from './interfaces/index.ts'
 
 export function routeConverter<T>(routes: IRoute<T>[]): IRouteEntity<T> {
   const entity: IRouteEntity<T> = {}
   for (const route of routes) {
     entity[route.path] = {
       dialog: route.dialog,
-      children: !!route.children ? routeConverter(route.children) : undefined
+      children: route.children ? routeConverter(route.children) : undefined
     }
   }
 

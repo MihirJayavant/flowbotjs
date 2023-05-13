@@ -1,2 +1,2 @@
-export * from './routes.mock'
-export * from './store.mock'
+export * from './routes.mock.ts'
+export * from './store.mock.ts'

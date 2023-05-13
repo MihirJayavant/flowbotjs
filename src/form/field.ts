@@ -1,4 +1,4 @@
-import { IField, FieldType, ValidatorFn, AsyncValidatorFn } from './interfaces'
+import { IField, FieldType, ValidatorFn, AsyncValidatorFn } from './interfaces/index.ts'
 
 export class FieldBuilder {
 

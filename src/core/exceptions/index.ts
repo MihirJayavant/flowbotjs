@@ -1,1 +1,1 @@
-export * from './dialog-not-found'
+export * from './dialog-not-found.ts'

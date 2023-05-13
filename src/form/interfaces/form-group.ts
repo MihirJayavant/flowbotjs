@@ -1,4 +1,4 @@
-import { IField } from './field'
+import { IField } from './field.ts'
 
 export interface IFormGroup {
   message?: string

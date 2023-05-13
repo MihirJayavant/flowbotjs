@@ -1,4 +1,4 @@
-import { IRoute, IDialogAction } from '../interfaces'
+import { IRoute, IDialogAction } from '../interfaces/index.ts'
 
 interface IState {
   data: string

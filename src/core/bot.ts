@@ -1,7 +1,7 @@
-import { IBotTemplate, IStore, IRoute, IActivatedRoute, IBot, IActivity } from './interfaces'
-import { routeConverter } from './router'
-import { dialogExecutor, routeExecutor, storeExecutor } from './executor'
-import { DialogNotFound } from './exceptions'
+import { IBotTemplate, IStore, IRoute, IActivatedRoute, IBot, IActivity } from './interfaces/index.ts'
+import { routeConverter } from './router.ts'
+import { dialogExecutor, routeExecutor, storeExecutor } from './executor.ts'
+import { DialogNotFound } from './exceptions/index.ts'
 
 export function createStore<T>(state: T, route: IRoute<T>[], startRoute: IActivatedRoute): IStore<T> {
   return {

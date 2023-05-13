@@ -1,4 +1,4 @@
-import { ITask } from './task'
+import { ITask } from './task.ts'
 
 export function scheduler<T>(queue: ITask<T>[], services: T) {
   while (queue.length > 0) {
@@ -15,7 +15,7 @@ export interface ITaskManager<T> {
 export class TaskManager<T> implements ITaskManager<T> {
   queue: ITask<T>[] = []
 
-  constructor(private services: T) {}
+  constructor(private services: T) { }
 
   schedule() {
     throw Error('Not implemented')

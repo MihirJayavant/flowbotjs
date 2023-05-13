@@ -1,4 +1,4 @@
-import { IRoute, IActivatedRoute, IRouteEntity } from './route'
+import { IRoute, IActivatedRoute, IRouteEntity } from './route.ts'
 
 export interface IStore<T> {
   state: T

@@ -1,5 +1,5 @@
-import { IStore, IActivatedRoute, IActivity, dialogFn } from './interfaces'
-import { findRoute } from './router'
+import { IStore, IActivatedRoute, IActivity, dialogFn } from './interfaces/index.ts'
+import { findRoute } from './router.ts'
 
 export function storeExecutor<T>(store: IStore<T>, stateSlice: Partial<T>, activatedRoute: IActivatedRoute): IStore<T> {
   return {

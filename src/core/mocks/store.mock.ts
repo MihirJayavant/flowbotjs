@@ -1,5 +1,5 @@
-import { IStore } from '../interfaces'
-import { simpleRoute, dialog1 } from './routes.mock'
+import { IStore } from '../interfaces/index.ts'
+import { simpleRoute, dialog1 } from './routes.mock.ts'
 
 interface ISimpleState {
   data: string

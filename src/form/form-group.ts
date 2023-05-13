@@ -1,4 +1,4 @@
-import { IFormGroup, IField } from './interfaces'
+import { IFormGroup, IField } from './interfaces/index.ts'
 
 export class FormGroupBuilder {
   private formGroup: IFormGroup = {

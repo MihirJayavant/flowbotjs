@@ -1,5 +1,5 @@
-import { IStore } from './store'
-import { IActivity } from './activity'
+import { IStore } from './store.ts'
+import { IActivity } from './activity.ts'
 
 export interface IBotTemplate<T> {
   readonly name: string
