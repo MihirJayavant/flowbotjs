@@ -1,9 +1,9 @@
-import { IRoute, IActivatedRoute, IRouteEntity } from './route.ts'
+import { IActivatedRoute, IRoute, IRouteEntity } from './route.ts'
 
 export interface IStore<T> {
-  state: T
-  rawRoutes: IRoute<T>[]
-  routes: IRouteEntity<T>
-  activatedRoute: IActivatedRoute
-  startRoute: IActivatedRoute
+	state: T
+	rawRoutes: IRoute<T>[]
+	routes: IRouteEntity<T>
+	activatedRoute: IActivatedRoute
+	startRoute: IActivatedRoute
 }

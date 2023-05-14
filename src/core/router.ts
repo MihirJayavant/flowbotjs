@@ -1,36 +1,41 @@
-import { IRoute, IRouteEntity, dialogFn } from './interfaces/index.ts'
+import { dialogFn, IRoute, IRouteEntity } from './interfaces/index.ts'
 
 export function routeConverter<T>(routes: IRoute<T>[]): IRouteEntity<T> {
-  const entity: IRouteEntity<T> = {}
-  for (const route of routes) {
-    entity[route.path] = {
-      dialog: route.dialog,
-      children: route.children ? routeConverter(route.children) : undefined
-    }
-  }
+	const entity: IRouteEntity<T> = {}
+	for (const route of routes) {
+		entity[route.path] = {
+			dialog: route.dialog,
+			children: route.children
+				? routeConverter(route.children)
+				: undefined,
+		}
+	}
 
-  return entity
+	return entity
 }
 
-export function findRoute<T>(path: string[], route: IRouteEntity<T>): dialogFn<T> | undefined {
-  let tempRoute = route
-  let count = 0
+export function findRoute<T>(
+	path: string[],
+	route: IRouteEntity<T>,
+): dialogFn<T> | undefined {
+	let tempRoute = route
+	let count = 0
 
-  while (count < path.length) {
-    const r = tempRoute[path[count]]
+	while (count < path.length) {
+		const r = tempRoute[path[count]]
 
-    if (r) {
-      if (count === path.length - 1)
-        return r.dialog
-      else if (r.children)
-        tempRoute = r.children
-      else
-        return undefined
+		if (r) {
+			if (count === path.length - 1) {
+				return r.dialog
+			} else if (r.children) {
+				tempRoute = r.children
+			} else {
+				return undefined
+			}
+		} else return undefined
 
-    } else return undefined
+		count++
+	}
 
-    count++
-  }
-
-  return undefined
+	return undefined
 }

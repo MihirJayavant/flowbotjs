@@ -1,5 +1,19 @@
-
 import { IActivity } from './activity.ts'
+
+export interface IContext<T> {
+  activity: IActivity,
+  state: T,
+  config: IConfig<T>
+}
+
+export interface IDialogAction<T> {
+  message: string
+  state?: Partial<T>
+  navigateTo?: IActivatedRoute
+}
+
+export type dialogFn<T> = (context: IContext<T>) => IDialogAction<T> | Promise<IDialogAction<T>>
+
 export interface IRoute<T> {
   path: string
   dialog?: dialogFn<T>
@@ -25,14 +39,3 @@ export interface IConfig<T> {
   activatedRoute: IActivatedRoute
 }
 
-export interface IDialogAction<T> {
-  message: string
-  state?: Partial<T>
-  navigateTo?: IActivatedRoute
-}
-
-export type dialogFn<T> = (
-  activity: IActivity,
-  state: T,
-  config: IConfig<T>
-) => IDialogAction<T> | Promise<IDialogAction<T>>

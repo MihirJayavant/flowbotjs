@@ -1,3 +1,3 @@
 export interface ITask<T> {
-  execute: (services: T) => Promise<void>
+	execute: (services: T) => Promise<void>
 }

@@ -1,7 +1,7 @@
 export interface IActivity {
-  message: string
+	message: string
 }
 
 export interface IActivityTemplate {
-  message: string
+	message: string
 }

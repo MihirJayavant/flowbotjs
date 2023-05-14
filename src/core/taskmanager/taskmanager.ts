@@ -1,23 +1,23 @@
 import { ITask } from './task.ts'
 
 export function scheduler<T>(queue: ITask<T>[], services: T) {
-  while (queue.length > 0) {
-    const task = queue[0]
-    queue.splice(0, 1)
-    task.execute(services)
-  }
+	while (queue.length > 0) {
+		const task = queue[0]
+		queue.splice(0, 1)
+		task.execute(services)
+	}
 }
 
 export interface ITaskManager<T> {
-  schedule: (task: ITask<T>) => void
+	schedule: (task: ITask<T>) => void
 }
 
 export class TaskManager<T> implements ITaskManager<T> {
-  queue: ITask<T>[] = []
+	queue: ITask<T>[] = []
 
-  constructor(private services: T) { }
+	constructor(private services: T) {}
 
-  schedule() {
-    throw Error('Not implemented')
-  }
+	schedule() {
+		throw Error('Not implemented')
+	}
 }
